@@ -21,6 +21,15 @@ public class Main extends Application {
         // Displaying the scene
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        // Second Stage
+        Stage newStage = new Stage();
+        newStage.setTitle("My Second Stage");
+        Button secondButton = new Button("2nd Button");
+        Scene secondScene = new Scene(secondButton, 200, 250);
+        newStage.setScene(secondScene);
+
+        newStage.show();
     }
 
 
