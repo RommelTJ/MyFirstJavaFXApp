@@ -23,6 +23,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         StackPane pane = new StackPane();
         pane.getChildren().add(new Button("Stack Pane"));
+        pane.setRotate(80);
         Scene scene = new Scene(pane, 200, 50);
         primaryStage.setTitle("Stack Pane Demo");
         primaryStage.setScene(scene);
