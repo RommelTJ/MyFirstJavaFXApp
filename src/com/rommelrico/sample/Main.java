@@ -9,6 +9,14 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 
+/**
+ * MyFirstJavaFXApp.
+ *
+ * Learning how to use JavaFX.
+ *
+ * JavaFX CSS Reference Guide:
+ * - https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+ */
 public class Main extends Application {
 
     @Override
@@ -35,9 +43,7 @@ public class Main extends Application {
         circle.centerXProperty().bind(pane1.widthProperty().divide(2));
         circle.centerYProperty().bind(pane1.heightProperty().divide(2));
         circle.setRadius(50);
-        circle.setStroke(Color.LAVENDER);
-        circle.setFill(Color.RED);
-
+        circle.setStyle("-fx-stroke: black; -fx-fill: red;");
         pane1.getChildren().add(circle);
         Scene thirdScene = new Scene(pane1, 200, 200);
         thirdStage.setTitle("Circle Demo");
