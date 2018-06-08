@@ -45,6 +45,14 @@ public class Main extends Application {
         circle.centerYProperty().bind(pane1.heightProperty().divide(2));
         circle.setRadius(50);
         circle.setStyle("-fx-stroke: black; -fx-fill: red;");
+        // Color class is immutable / Value types.
+        Color color = new Color(0.25, 0.14, 0.333, 0.51);
+        Color color2 = color.brighter();
+        Color color3 = color2.darker();
+        Color color4 = color3.color(0.33, 0.55, 0.879); // Overloading twice.
+        Color color5 = Color.color(0.33, 0.55, 0.879, 0.654); // Correct way of doing this.
+        Color color6 = Color.rgb(56, 177, 57, 0.9);
+        circle.setFill(color3);
         pane1.getChildren().add(circle);
         Scene thirdScene = new Scene(pane1, 200, 200);
         thirdStage.setTitle("Circle Demo");
