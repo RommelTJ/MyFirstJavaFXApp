@@ -64,8 +64,10 @@ public class Main extends Application {
         Color color4 = color3.color(0.33, 0.55, 0.879); // Overloading twice.
         Color color5 = Color.color(0.33, 0.55, 0.879, 0.654); // Correct way of doing this.
         Color color6 = Color.rgb(56, 177, 57, 0.9);
-        circle.setFill(color5);
-        pane1.getChildren().add(circle);
+        circle.setFill(Color.WHITE);
+        Label label = new Label("JavaFX");
+        label.setFont(font3);
+        pane1.getChildren().addAll(circle, label);
         Scene thirdScene = new Scene(pane1, 200, 200);
         thirdStage.setTitle("Circle Demo");
         thirdStage.setScene(thirdScene);
