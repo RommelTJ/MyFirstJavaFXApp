@@ -1,4 +1,4 @@
-package sample;
+package com.rommelrico.sample;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
