@@ -1,6 +1,7 @@
 package com.rommelrico.sample;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.shape.Circle;
@@ -12,6 +13,9 @@ import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * MyFirstJavaFXApp.
@@ -72,6 +76,31 @@ public class Main extends Application {
         thirdStage.setTitle("Circle Demo");
         thirdStage.setScene(thirdScene);
         thirdStage.show();
+
+        // Fourth Window
+        Stage stagefour = new Stage();
+        Pane panefour = new HBox(10);
+        panefour.setPadding(new Insets(5, 5, 5, 5));
+        // Image Can be file-path or webpage.
+        Image image = new Image("https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1235px-Flag_of_the_United_States.svg.png");
+        panefour.getChildren().add(new ImageView(image));
+
+        // Scaling an image.
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(100);
+        panefour.getChildren().add(imageView);
+
+        // Rotating an image.
+        ImageView imageView1 = new ImageView(image);
+        imageView1.setRotate(90);
+        panefour.getChildren().add(imageView1);
+
+        // Adding to scene and displaying it.
+        Scene scenefour = new Scene(panefour);
+        stagefour.setTitle("Image Views");
+        stagefour.setScene(scenefour);
+        stagefour.show();
     }
 
 
