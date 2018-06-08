@@ -28,15 +28,16 @@ public class Main extends Application {
         newStage.setScene(secondScene);
         newStage.show();
 
-        // Third stage
+        // Third stage - with property binding.
+        Pane pane1 = new Pane();
         Stage thirdStage = new Stage();
         Circle circle = new Circle();
-        circle.setCenterX(100);
-        circle.setCenterY(100);
+        circle.centerXProperty().bind(pane1.widthProperty().divide(2));
+        circle.centerYProperty().bind(pane1.heightProperty().divide(2));
         circle.setRadius(50);
         circle.setStroke(Color.LAVENDER);
         circle.setFill(Color.RED);
-        Pane pane1 = new Pane();
+
         pane1.getChildren().add(circle);
         Scene thirdScene = new Scene(pane1, 200, 200);
         thirdStage.setTitle("Circle Demo");
