@@ -1,24 +1,19 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-
-        // Adding a button.
-        Button okButton = new Button("OK");
-        Scene scene = new Scene(okButton, 200, 250);
-
-        // Displaying the scene
+        StackPane pane = new StackPane();
+        pane.getChildren().add(new Button("Stack Pane"));
+        Scene scene = new Scene(pane, 200, 50);
+        primaryStage.setTitle("Stack Pane Demo");
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -28,7 +23,6 @@ public class Main extends Application {
         Button secondButton = new Button("2nd Button");
         Scene secondScene = new Scene(secondButton, 200, 250);
         newStage.setScene(secondScene);
-
         newStage.show();
     }
 
