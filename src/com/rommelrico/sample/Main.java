@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * MyFirstJavaFXApp.
