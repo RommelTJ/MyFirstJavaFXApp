@@ -6,8 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.control.Label;
 
 /**
  * MyFirstJavaFXApp.
@@ -28,6 +32,12 @@ public class Main extends Application {
         primaryStage.setTitle("Stack Pane Demo");
         primaryStage.setScene(scene);
         primaryStage.show();
+        // Font.getFamilies(); // List of Font Families.
+        // Font.getFontNames(); // List of Font Names.
+        // Creating a new font.
+        Font font1 = new Font("Times", 12);
+        Font font2 = Font.font("Times", FontWeight.EXTRA_LIGHT, 14);
+        Font font3 = Font.font("Arial", FontWeight.BOLD, FontPosture.ITALIC, 12.5);
 
         // Second Stage
         Stage newStage = new Stage();
@@ -54,8 +64,10 @@ public class Main extends Application {
         Color color4 = color3.color(0.33, 0.55, 0.879); // Overloading twice.
         Color color5 = Color.color(0.33, 0.55, 0.879, 0.654); // Correct way of doing this.
         Color color6 = Color.rgb(56, 177, 57, 0.9);
-        circle.setFill(color5);
-        pane1.getChildren().add(circle);
+        circle.setFill(Color.WHITE);
+        Label label = new Label("JavaFX");
+        label.setFont(font3);
+        pane1.getChildren().addAll(circle, label);
         Scene thirdScene = new Scene(pane1, 200, 200);
         thirdStage.setTitle("Circle Demo");
         thirdStage.setScene(thirdScene);
