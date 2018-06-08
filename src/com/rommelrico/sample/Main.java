@@ -8,6 +8,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.control.Label;
 
 /**
  * MyFirstJavaFXApp.
