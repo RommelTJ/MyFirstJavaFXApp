@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -30,6 +32,12 @@ public class Main extends Application {
         primaryStage.setTitle("Stack Pane Demo");
         primaryStage.setScene(scene);
         primaryStage.show();
+        // Font.getFamilies(); // List of Font Families.
+        // Font.getFontNames(); // List of Font Names.
+        // Creating a new font.
+        Font font1 = new Font("Times", 12);
+        Font font2 = Font.font("Times", FontWeight.EXTRA_LIGHT, 14);
+        Font font3 = Font.font("Arial", FontWeight.BOLD, FontPosture.ITALIC, 12.5);
 
         // Second Stage
         Stage newStage = new Stage();
