@@ -14,7 +14,23 @@ public class ShowPanes extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
+        FlowPane pane = new FlowPane();
+        pane.setPadding(new Insets(11, 12, 13, 14));
+        pane.setVgap(5);
+        pane.setHgap(5);
+
+        Label myLabel = new Label("First Name");
+        TextField blankTF = new TextField();
+        Label miLabel = new Label("MI: ");
+        pane.getChildren().addAll(myLabel, blankTF, miLabel);
+        TextField tfMi = new TextField();
+        tfMi.setPrefColumnCount(1);
+        pane.getChildren().addAll(tfMi, new Label("Last Name: "), new TextField());
+
+        Scene scene = new Scene(pane, 200, 250);
+        primaryStage.setTitle("Show FlowPane");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
