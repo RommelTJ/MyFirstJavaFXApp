@@ -8,9 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class ShowPanes extends Application {
@@ -78,10 +78,47 @@ public class ShowPanes extends Application {
         thirdStage.setScene(thirdScene);
         thirdStage.show();
 
+        // Working with HBox and VBox Setup
+        Stage fourthStage = new Stage();
+        BorderPane borderPane = new BorderPane();
+
+        // Configuring the BorderPane.
+        borderPane.setTop(getHBox());
+        borderPane.setLeft(getVBox());
+
+        // Displaying the Hbox and VBox.
+        Scene fourthScene = new Scene(borderPane);
+        fourthStage.setTitle("Show HBox and VBox");
+        fourthStage.setScene(fourthScene);
+        fourthStage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private HBox getHBox() {
+        HBox hBox = new HBox(15);
+        hBox.setPadding(new Insets(15));
+        hBox.setStyle("-fx-background-color: gold;");
+        hBox.getChildren().add(new Button("Computer Science"));
+        hBox.getChildren().add(new Button("Chemistry"));
+        Image americanFlag = new Image("https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1235px-Flag_of_the_United_States.svg.png");
+        ImageView imageView = new ImageView(americanFlag);
+        hBox.getChildren().add(imageView);
+        return hBox;
+    }
+
+    private VBox getVBox() {
+        VBox vBox = new VBox(15);
+        vBox.setPadding(new Insets(15, 5, 5, 5));
+        vBox.getChildren().add(new Label("Courses: "));
+        Label[] courses = { new Label("CS 151"), new Label("CS 152"), new Label("CS 155"), new Label("CS 250") };
+        for (Label course: courses) {
+            vBox.setMargin(course, new Insets(0, 0, 0, 15));
+            vBox.getChildren().add(course);
+        }
+        return vBox;
     }
 
 }
