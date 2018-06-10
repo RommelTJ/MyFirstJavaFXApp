@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -57,10 +58,26 @@ public class ShowPanes extends Application {
         GridPane.setHalignment(buttonAdd, HPos.RIGHT);
 
         // Displaying the GridPane.
-        Scene secondaryScene = new Scene(pane1, 200, 250);
+        Scene secondaryScene = new Scene(pane1);
         secondaryStage.setTitle("Show GridPane");
         secondaryStage.setScene(secondaryScene);
         secondaryStage.show();
+
+        // BorderPane Setup
+        Stage thirdStage = new Stage();
+        BorderPane pane2 = new BorderPane();
+        pane2.setTop(new CustomPane("Top"));
+        pane2.setRight(new CustomPane("Right"));
+        pane2.setBottom(new CustomPane("Bottom"));
+        pane2.setLeft(new CustomPane("Left"));
+        pane2.setCenter(new CustomPane("Center"));
+
+        // Displaying the BorderPane.
+        Scene thirdScene = new Scene(pane2);
+        thirdStage.setTitle("Show BorderPane");
+        thirdStage.setScene(thirdScene);
+        thirdStage.show();
+
     }
 
     public static void main(String[] args) {
