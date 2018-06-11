@@ -2,14 +2,12 @@ package com.rommelrico.sample;
 
 import com.sun.javafx.css.FontFace;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.ArcType;
-import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -138,6 +136,30 @@ public class ShowShapes extends Application {
         stage5.setTitle("Show Arcs");
         stage5.setScene(scene5);
         stage5.show();
+
+        // Working with the Polygon class.
+        Pane pane6 = new Pane();
+        Polygon polygon = new Polygon();
+        pane6.getChildren().add(polygon);
+        polygon.setFill(Color.WHITE);
+        polygon.setStroke(Color.BLACK);
+        ObservableList<Double> list = polygon.getPoints();
+
+        final double WIDTH = 200, HEIGHT = 200;
+        double centerX = WIDTH / 2, centerY = HEIGHT / 2;
+        double radius = Math.min(WIDTH, HEIGHT) * 0.4;
+
+        for (int i = 0; i < 6; i++) {
+            list.add(centerX + radius * Math.cos(2 * i * Math.PI / 6));
+            list.add(centerY + radius * Math.sin(2 * i * Math.PI / 6));
+        }
+
+        // Displaying the Polygon.
+        Stage stage6 = new Stage();
+        Scene scene6 = new Scene(pane6, WIDTH, HEIGHT);
+        stage6.setTitle("Show Polygon");
+        stage6.setScene(scene6);
+        stage6.show();
     }
 
     public static void main(String[] args) {
