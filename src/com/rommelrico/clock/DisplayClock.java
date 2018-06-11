@@ -16,7 +16,7 @@ public class DisplayClock extends Application {
         Label currentTimeLabel = new Label(timeString);
 
         BorderPane pane = new BorderPane();
-        // pane.setCenter(clock);
+        pane.setCenter(clock);
         pane.setBottom(currentTimeLabel);
         BorderPane.setAlignment(currentTimeLabel, Pos.TOP_CENTER);
 
@@ -27,6 +27,6 @@ public class DisplayClock extends Application {
     }
 
     public static void main(String[] args) {
-
+        launch(args);
     }
 }
