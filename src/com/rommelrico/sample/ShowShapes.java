@@ -36,6 +36,13 @@ public class ShowShapes extends Application {
         primaryStage.setTitle("Show Shapes");
         primaryStage.setScene(myScene);
         primaryStage.show();
+
+        // Working with the Line class
+        Stage stage2 = new Stage();
+        Scene scene2 = new Scene(new LinePane(), 200, 200);
+        stage2.setTitle("Show Line");
+        stage2.setScene(scene2);
+        stage2.show();
     }
 
     public static void main(String[] args) {
