@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -82,6 +83,23 @@ public class ShowShapes extends Application {
         stage3.setTitle("Show Rectangles");
         stage3.setScene(scene3);
         stage3.show();
+
+        // New Pane for Circle and Ellipse
+        Pane pane3 = new Pane();
+        for (int i = 0; i< 16; i++) {
+            Ellipse e1 = new Ellipse(150, 100, 100, 50);
+            e1.setStroke(Color.color(Math.random(), Math.random(), Math.random()));
+            e1.setFill(Color.WHITE);
+            e1.setRotate(i * 180 / 16);
+            pane3.getChildren().add(e1);
+        }
+
+        // Display the circles
+        Stage stage4 = new Stage();
+        Scene scene4 = new Scene(pane3, 300, 200);
+        stage4.setTitle("Show Ellipse");
+        stage4.setScene(scene4);
+        stage4.show();
     }
 
     public static void main(String[] args) {
