@@ -3,6 +3,7 @@ package com.rommelrico.sample;
 import com.sun.javafx.css.FontFace;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -29,6 +30,12 @@ public class ShowShapes extends Application {
         myText3.setUnderline(true);
         myText3.setStrikethrough(true);
         pane.getChildren().add(myText3);
+
+        // Displaying the scene
+        Scene myScene = new Scene(pane);
+        primaryStage.setTitle("Show Shapes");
+        primaryStage.setScene(myScene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
