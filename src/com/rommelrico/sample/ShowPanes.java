@@ -115,7 +115,7 @@ public class ShowPanes extends Application {
         vBox.getChildren().add(new Label("Courses: "));
         Label[] courses = { new Label("CS 151"), new Label("CS 152"), new Label("CS 155"), new Label("CS 250") };
         for (Label course: courses) {
-            vBox.setMargin(course, new Insets(0, 0, 0, 15));
+            VBox.setMargin(course, new Insets(0, 0, 0, 15));
             vBox.getChildren().add(course);
         }
         return vBox;
