@@ -52,20 +52,20 @@ public class ShowShapes extends Application {
         Rectangle r1 = new Rectangle(25, 50, 60, 30);
         r1.setStroke(Color.BLACK);
         r1.setFill(Color.WHITE);
-        pane.getChildren().add(new Text(10, 27, "r1"));
-        pane.getChildren().add(r1);
+        pane2.getChildren().add(new Text(10, 27, "r1"));
+        pane2.getChildren().add(r1);
 
         // Rectangle 2
         Rectangle r2 = new Rectangle(25, 50, 60, 30);
-        pane.getChildren().add(new Text(10, 67, "r2"));
-        pane.getChildren().add(r2);
+        pane2.getChildren().add(new Text(10, 67, "r2"));
+        pane2.getChildren().add(r2);
 
         // Rounded Rectangle
         Rectangle r3 = new Rectangle(25, 90, 60, 30);
         r3.setArcWidth(15);
         r3.setArcHeight(25);
-        pane.getChildren().add(new Text(10, 107, "r3"));
-        pane.getChildren().add(r3);
+        pane2.getChildren().add(new Text(10, 107, "r3"));
+        pane2.getChildren().add(r3);
 
         // Overlapping Rectangles.
         for (int i = 0; i < 4; i++) {
@@ -73,8 +73,15 @@ public class ShowShapes extends Application {
             rect.setRotate(i * 360 / 8);
             rect.setStroke(Color.color(Math.random(), Math.random(), Math.random()));
             rect.setFill(Color.WHITE);
-            pane.getChildren().add(rect);
+            pane2.getChildren().add(rect);
         }
+
+        // Displaying the rectangles.
+        Stage stage3 = new Stage();
+        Scene scene3 = new Scene(pane2, 250, 150);
+        stage3.setTitle("Show Rectangles");
+        stage3.setScene(scene3);
+        stage3.show();
     }
 
     public static void main(String[] args) {
