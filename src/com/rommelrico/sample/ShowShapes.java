@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -43,6 +44,17 @@ public class ShowShapes extends Application {
         stage2.setTitle("Show Line");
         stage2.setScene(scene2);
         stage2.show();
+
+        // New Pane for rectangles.
+        Pane pane2 = new Pane();
+
+        // Black and white Rectangle
+        Rectangle r1 = new Rectangle(25, 50, 60, 30);
+        r1.setStroke(Color.BLACK);
+        r1.setFill(Color.WHITE);
+        pane.getChildren().add(new Text(10, 27, "r1"));
+        pane.getChildren().add(r1);
+        
     }
 
     public static void main(String[] args) {
