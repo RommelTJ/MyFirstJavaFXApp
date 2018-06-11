@@ -20,6 +20,8 @@ public class ShowShapes extends Application {
         myText.setFont(Font.font("Courier", FontWeight.BOLD, FontPosture.ITALIC, 15));
         pane.getChildren().add(myText);
 
+        Text myText2 = new Text(60, 60, "Programming is fun\n Display Text");
+        pane.getChildren().add(myText2);
         
     }
 
