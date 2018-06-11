@@ -86,11 +86,11 @@ public class ShowShapes extends Application {
 
         // New Pane for Circle and Ellipse
         Pane pane3 = new Pane();
-        for (int i = 0; i< 16; i++) {
+        for (int i = 0; i< 360; i++) {
             Ellipse e1 = new Ellipse(150, 100, 100, 50);
             e1.setStroke(Color.color(Math.random(), Math.random(), Math.random()));
             e1.setFill(Color.WHITE);
-            e1.setRotate(i * 180 / 16);
+            e1.setRotate(i * 180 / 360);
             pane3.getChildren().add(e1);
         }
 
