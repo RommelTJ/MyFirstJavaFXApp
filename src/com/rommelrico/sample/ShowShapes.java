@@ -66,6 +66,15 @@ public class ShowShapes extends Application {
         r3.setArcHeight(25);
         pane.getChildren().add(new Text(10, 107, "r3"));
         pane.getChildren().add(r3);
+
+        // Overlapping Rectangles.
+        for (int i = 0; i < 4; i++) {
+            Rectangle rect = new Rectangle(100, 50, 100, 30);
+            rect.setRotate(i * 360 / 8);
+            rect.setStroke(Color.color(Math.random(), Math.random(), Math.random()));
+            rect.setFill(Color.WHITE);
+            pane.getChildren().add(rect);
+        }
     }
 
     public static void main(String[] args) {
