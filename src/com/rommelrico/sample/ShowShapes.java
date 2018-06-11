@@ -54,7 +54,11 @@ public class ShowShapes extends Application {
         r1.setFill(Color.WHITE);
         pane.getChildren().add(new Text(10, 27, "r1"));
         pane.getChildren().add(r1);
-        
+
+        // Rectangle 2
+        Rectangle r2 = new Rectangle(25, 50, 60, 30);
+        pane.getChildren().add(new Text(10, 67, "r2"));
+        pane.getChildren().add(r2);
     }
 
     public static void main(String[] args) {
