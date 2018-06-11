@@ -6,6 +6,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Arc;
+import javafx.scene.shape.ArcType;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -100,6 +102,42 @@ public class ShowShapes extends Application {
         stage4.setTitle("Show Ellipse");
         stage4.setScene(scene4);
         stage4.show();
+
+        // Working with Arcs
+        Pane pane5 = new Pane();
+        Arc arc1 = new Arc(150, 100, 80, 80, 30, 35);
+        arc1.setFill(Color.RED);
+        arc1.setType(ArcType.ROUND);
+        pane5.getChildren().add(new Text(210, 40, "arc1: round"));
+        pane5.getChildren().add(arc1);
+
+        Arc arc2 = new Arc(150, 100, 80, 80, 30 + 90, 35);
+        arc2.setFill(Color.WHITE);
+        arc2.setType(ArcType.OPEN);
+        arc2.setStroke(Color.BLACK);
+        pane5.getChildren().add(new Text(20, 40, "arc2: open"));
+        pane5.getChildren().add(arc2);
+
+        Arc arc3 = new Arc(150, 100, 80, 80, 30 + 180, 35);
+        arc3.setFill(Color.WHITE);
+        arc3.setType(ArcType.CHORD);
+        arc3.setStroke(Color.BLACK);
+        pane5.getChildren().add(new Text(20, 170, "arc3: chord"));
+        pane5.getChildren().add(arc3);
+
+        Arc arc4 = new Arc(150, 100, 80, 80, 30 + 270, 35);
+        arc4.setFill(Color.GREEN);
+        arc4.setType(ArcType.CHORD);
+        arc4.setStroke(Color.BLACK);
+        pane5.getChildren().add(new Text(210, 170, "arc4: chord"));
+        pane5.getChildren().add(arc4);
+
+        // Displaying the arcs.
+        Stage stage5 = new Stage();
+        Scene scene5 = new Scene(pane5, 300, 200);
+        stage5.setTitle("Show Arcs");
+        stage5.setScene(scene5);
+        stage5.show();
     }
 
     public static void main(String[] args) {
